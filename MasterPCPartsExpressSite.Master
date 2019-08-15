@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPCPartsExpressSite.master.cs" Inherits="PCPPartsExpress.MasterPCPartsExpressSite" %>
+
+<!DOCTYPE html>
+
+<html>
+
+<!------------------------------------------------->
+<!------User Master Page of PC Parts Express------->
+<!------------------------------------------------->
+
+<head runat="server">
+
+    <title></title>
+    <link href="CSS/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <link href="CSS/PCPartsExpressStyleSheet.css" rel="stylesheet" />
+</head>
+
+<body style="box-sizing: border-box;" overflow-y: scroll; >
+    <form id="form1" runat="server">
+        <div class="container" style="max-width:1200px">
+            <div class="jumbotron">
+              <a class="nav-link active" runat="server" href="~/User_Layer/Default.aspx"><img src="IMG/PCPARTSEXPRESSlogo.png" runat="server" alt="alternative text" title="Home"  style="width: 100%; padding-top: 10px"  /></a>
+                <div class="container body-content">
+                    <div class="row justify-content-end" style="padding-top: 20px; padding-bottom: 10px">
+                        <ul class="nav nav-pills" >
+                            <li class="nav-item">
+                                <asp:TextBox runat="server" Cssclass="input-mysize" ID="searchBar" placeholder="Search"></asp:TextBox>
+                               <asp:button Cssclass="btn btn-outline-success input-mysize2" ID="searchButton" OnClick="searchButton_Click" runat="server" type="submit" Text="Search"></asp:button>
+                            </li>
+
+                         <li class="nav-item navsize"><asp:Hyperlink ID="btnShoppingCart" runat="server" Cssclass="nav-link active" Text="Shopping Cart" NavigateUrl="~/User_Layer/ShoppingCart.aspx"></asp:Hyperlink></li> 
+                         <li class="nav-item navsize"><asp:Hyperlink ID="btnLogin" runat="server" Cssclass="nav-link active" Text="Login" NavigateUrl="~/User_Layer/Login.aspx"></asp:Hyperlink></li> 
+                         <li class="nav-item navsize"><asp:Hyperlink ID="btnRegister" Cssclass="nav-link active" runat="server" Text="Register" NavigateUrl="~/User_Layer/Registration.aspx"></asp:Hyperlink></li>
+                        </ul>
+                    </div> 
+                </div>
+                <hr />
+            <div class="container body-content">
+                        <div class="row">
+                            <div class="col-lg-2">
+                             <ul class="nav nav-pills flex-column" >
+
+                                 <!--Current tab links send user to search results page without DAL-->
+
+                                  <li class="nav-item navsize2"><asp:LinkButton ID="Cases" Cssclass="nav-link active" runat="server" OnClick="CasesCategory_Click">Cases</asp:LinkButton></li>
+                                 <li class="nav-item navsize2"><asp:LinkButton ID="Cooling" Cssclass="nav-link active" runat="server" OnClick="CoolingCategory_Click">Cooling</asp:LinkButton></li>
+                                 <li class="nav-item navsize2"><asp:LinkButton ID="CPU" Cssclass="nav-link active" runat="server" OnClick="CPUCategory_Click">CPU's</asp:LinkButton></li>
+                                 <li class="nav-item navsize2"><asp:LinkButton ID="GPU" Cssclass="nav-link active" runat="server" OnClick="GPUCategory_Click">Graphics Cards</asp:LinkButton></li>
+                                 <li class="nav-item navsize2"><asp:LinkButton ID="Keyboard" Cssclass="nav-link active" runat="server" OnClick="KeyboardCategory_Click">Keyboards</asp:LinkButton></li>
+                                 <li class="nav-item navsize2"><asp:LinkButton ID="Storage" Cssclass="nav-link active" runat="server" OnClick="StorageCategory_Click">Storage Drives</asp:LinkButton></li>
+                                 <li class="nav-item navsize2"><asp:LinkButton ID="Memory" Cssclass="nav-link active" runat="server" OnClick="MemoryCategory_Click">Memory</asp:LinkButton></li>
+                                 <li class="nav-item navsize2"><asp:LinkButton ID="Monitors" Cssclass="nav-link active" runat="server" OnClick="MonitorCategory_Click">Monitors</asp:LinkButton></li>
+                                 <li class="nav-item navsize2"><asp:LinkButton ID="Motherboard" Cssclass="nav-link active" runat="server" OnClick="MotherBoardCategory_Click">Motherboards</asp:LinkButton></li>
+                                 <li class="nav-item navsize2"><asp:LinkButton ID="Mouse" Cssclass="nav-link active" runat="server" OnClick="MouseCategory_Click">Mice</asp:LinkButton></li>
+                                 <li class="nav-item navsize2"><asp:LinkButton ID="PSU" Cssclass="nav-link active" runat="server" OnClick="PSUCategory_Click">Power Supplies</asp:LinkButton></li>
+
+
+                </ul>
+                </div>
+                            <div class="col-lg-10 ">
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                            </asp:ContentPlaceHolder>
+         </div>
+            </div>
+                </div>
+                <hr />
+        <div class="container footer">
+            <footer>
+            <a runat="server" href="~/User_Layer/About.aspx">About</a>
+                <br/>
+            <a runat="server" href="~/User_Layer/ContactUs.aspx">Contact Us</a>
+                <p>PC Parts Express
+                    <br />
+                    &copy <%: DateTime.Now.Year %> - Matthew Hayes & Victor Jones</p>
+            </footer>
+        </div>
+        </div>
+</div>
+
+
+
+    </form>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+      <script src="https://www.paypal.com/sdk/js?client-id=SB_CLIENT_ID">  </script>
+
+</body>
+</html>
+
